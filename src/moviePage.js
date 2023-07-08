@@ -86,11 +86,11 @@ const MoviePage = () => {
                   <h1 className="text-xl font-semibold">
                     {movieData.Director}
                   </h1>
-                  <h1 className="">Director</h1>
+                  <h1 className="font-bold italic mt-2">Director</h1>
                 </div>
                 <div className="flex flex-col w-[40%]">
                   <h1 className="text-xl font-semibold">{movieData.Writer}</h1>
-                  <h1 className="">Writer</h1>
+                  <h1 className="font-bold italic mt-2">Writer</h1>
                 </div>
               </div>
             </div>

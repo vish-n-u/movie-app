@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import Pagination from "./pagination";
 import logo from "./assets/logo.png";
 import ShimmerHomePage from "./shimmerHomePage";
@@ -17,7 +17,7 @@ const SearchPage = () => {
   const location = useLocation();
   const queryparams = new URLSearchParams(location.search);
   const query = queryparams.get("query");
-  console.log(query, queryparams);
+  const navigate = useNavigate();
 
   useEffect(() => {
     /***
@@ -112,16 +112,15 @@ const SearchPage = () => {
             <div
               key={movie.imdbID}
               className=" w-56  rounded-md flex flex-col mx-5 m-2"
+              onClick={() => navigate(`/movie/${movie.imdbID}`)}
             >
-              <Link to={`movie/${movie.imdbID}`}>
-                <img
-                  className="h-80 w-full rounded-md p-2 hover:p-0 hover:transition-all"
-                  src={movie.Poster}
-                  alt={movie.Title}
-                />
-                <h1 className="w-full">{movie.Title}</h1>
-                <h1>{movie.Year}</h1>
-              </Link>
+              <img
+                className="h-80 w-full rounded-md p-2 hover:p-0 hover:transition-all"
+                src={movie.Poster}
+                alt={movie.Title}
+              />
+              <h1 className="w-full">{movie.Title}</h1>
+              <h1>{movie.Year}</h1>
             </div>
           ))}
         </div>
