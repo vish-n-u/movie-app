@@ -26,13 +26,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 # Mvie Application - Frontend
-This project is a simple movie searching application built using react and tailwindcss.
+This project is a simple movie-searching application built using react and tailwindcss.
 
 
 ## Tools used
 - TailwindCss
 - React-Router-Dom
-- OMDB apis
+- OMDB APIs
 - Redux-Toolkit 
 
 <br/>
@@ -45,8 +45,8 @@ This project is a simple movie searching application built using react and tailw
 ## Tech-stack
 - React.js: A popular JavaScript library for building user interfaces.
 - Tailwind CSS: A utility-first CSS framework for rapidly styling your application.
-- React-router-dom : Declarative routing for React web applications
-- Redux-toolkit : A centralized state management tool
+- React-router-dom: Declarative routing for React web applications
+- Redux-toolkit: A centralized state management tool
 
 ## Dependencies
 |npm modules|
@@ -56,6 +56,6 @@ This project is a simple movie searching application built using react and tailw
 |react-router-dom|
 |react-redux|
 |@reduxjs/toolkit|
-|react-pagination|
-|react
+|react-paginate|
+|react-circular-progressbar|
 
