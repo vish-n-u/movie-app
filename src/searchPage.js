@@ -142,11 +142,13 @@ const SearchPage = () => {
           alt="Did not find this page"
         />
       )}
-      <Pagination
-        pageNumber={pageNumber}
-        setPageNumber={setPageNumber}
-        totalResults={totalResults}
-      />
+      {movies.length > 0 && (
+        <Pagination
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
+          totalResults={totalResults}
+        />
+      )}
     </div>
   );
 };
