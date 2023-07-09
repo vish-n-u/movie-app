@@ -14,6 +14,7 @@ const SearchMovies = createSlice({
       } else {
         state.item[objs.query] = {};
         state.item[objs.query][objs.pageNumber] = [...objs.movies];
+        state.item[objs.query].totalResults = objs.totalResults;
       }
       console.log(state.item);
     },

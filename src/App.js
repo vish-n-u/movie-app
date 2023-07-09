@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addMovies } from "./redux/homePageData";
 import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ const MovieSearch = () => {
   const [searchQuery, setSearchQuery] = useState(""); // the queries written in the searchbar is set here
   const Dispatch = useDispatch(); // react-redux hook to store data in rtk
   const homePageData = useSelector((store) => store.homePageMovies.item); // gets the data from the store
-
+  const Navigate = useNavigate();
   useEffect(() => {
     if (homePageData.length > 0) {
       setMovies(homePageData); // checks if data is available in rtk , if yes then skips fetching data
@@ -81,6 +81,11 @@ const MovieSearch = () => {
           type="text"
           className="p-2 pl-5 border-black border rounded-md w-80 rounded-l-full "
           onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              Navigate(`/search?query=${e.target.value}`);
+            }
+          }}
         />
         <Link to={`/search?query=${searchQuery}`}>
           <button className="rounded-r-full px-6 h-10 bg-gray-200 hover:bg-gray-400/75 active:bg-gray-700 text-white border border-white rounded-lg  p-2">
